@@ -8,11 +8,13 @@ public class EnemyFollower : MonoBehaviour
     private Transform Player;
     [SerializeField] private float moveSpeed;
     private SpriteRenderer sp;
+    private Animator anim;
 
     private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         sp = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     private void Update()
@@ -27,7 +29,7 @@ public class EnemyFollower : MonoBehaviour
         if (Player != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, Player.position, moveSpeed * Time.deltaTime);
-        
+            anim.SetBool("Run", true);
         }
 
     }
