@@ -32,16 +32,11 @@ public class InventoryMenu : MonoBehaviour
         Inventory.SetActive(false);
         Time.timeScale = 1f;
     }
-    // Start is called before the first frame update
+
     public void Inven()
     {
         Inventory.SetActive(true);
-        Time.timeScale = 0f;
+      
     }
 
-    public void Resume()
-    {
-        Inventory.SetActive(false);
-        Time.timeScale = 1f;
-    }
 }
